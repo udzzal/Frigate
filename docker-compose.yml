@@ -1,0 +1,26 @@
+services:
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: mosquitto
+    restart: unless-stopped
+
+  frigate:
+    image: ghcr.io/blakeblackshear/frigate:stable
+    container_name: frigate
+    restart: unless-stopped
+
+    depends_on:
+      - mosquitto
+
+    shm_size: "256mb"
+
+    volumes:
+      - ./config:/config
+      - ./storage:/media/frigate
+
+    ports:
+      - "8971:8971"
+      - "8554:8554"
+      - "8555:8555/tcp"
+      - "8555:8555/udp"
