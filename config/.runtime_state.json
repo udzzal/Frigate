@@ -1,8 +1,0 @@
-{
-  "cameras": {
-    "front_camera": {
-      "enabled": true,
-      "snapshots": true
-    }
-  }
-}

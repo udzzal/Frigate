@@ -1,0 +1,9 @@
+config/.jwt_secret
+config/.runtime_state.json*
+config/.exports
+config/.search_stats.json
+config/.vacuum
+config/*.db
+config/*.db-shm
+config/*.db-wal
+mosquitto/data/
